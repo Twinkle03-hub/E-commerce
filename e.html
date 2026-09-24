@@ -1,0 +1,4742 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+ 
+:root {
+  --cream: #f6f0e5;
+  --dark-brown: #241a14;
+  --brown: #4b3425;
+  --gold: #b58a45;
+  --light-gold: #d7b878;
+  --white: #fffdf8;
+}
+
+
+.classic-navbar {
+
+  width: 100%;
+  height: 82px;
+
+  padding: 0 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: var(--cream);
+
+  border-bottom:
+    1px solid rgba(181,138,69,.35);
+
+  position: sticky;
+  top: 0;
+
+  z-index: 999;
+
+}
+
+
+.brand-logo {
+
+  text-decoration: none;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 30px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  color: var(--dark-brown);
+
+}
+
+
+.brand-logo span {
+  color: var(--gold);
+}
+
+.nav-links {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 35px;
+
+  list-style: none;
+
+}
+
+
+.nav-links a {
+
+  position: relative;
+
+  text-decoration: none;
+
+  color: var(--brown);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  letter-spacing: .5px;
+
+  padding: 8px 0;
+
+  transition: .3s;
+
+}
+
+
+.nav-links a:hover,
+.nav-links a.active {
+
+  color: var(--gold);
+
+}
+
+.nav-links a::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--gold);
+
+  transition: .3s;
+
+}
+
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+
+  width: 100%;
+
+}
+
+
+
+.nav-right {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+}
+
+
+/* SEARCH */
+
+.search-icon {
+
+  text-decoration: none;
+
+  color: var(--dark-brown);
+
+  font-size: 28px;
+
+  line-height: 1;
+
+  transition: .3s;
+
+}
+
+
+.search-icon:hover {
+
+  color: var(--gold);
+
+}
+
+
+.nav-shop {
+
+  text-decoration: none;
+
+  padding: 12px 23px;
+
+  background: var(--dark-brown);
+
+  color: var(--white);
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: .5px;
+
+  border: 1px solid var(--dark-brown);
+
+  transition: .3s;
+
+}
+
+
+.nav-shop:hover {
+
+  background: var(--gold);
+
+  border-color: var(--gold);
+
+}
+
+
+
+.menu-btn {
+
+  display: none;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--dark-brown);
+
+  font-size: 27px;
+
+  cursor: pointer;
+
+}
+
+
+
+@media (max-width: 900px) {
+
+  .nav-links {
+
+    position: absolute;
+
+    top: 82px;
+    left: 0;
+
+    width: 100%;
+
+    background: var(--cream);
+
+    display: none;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    padding: 15px 7%;
+
+    border-bottom:
+      1px solid rgba(181,138,69,.35);
+
+  }
+
+
+  .nav-links.show {
+
+    display: flex;
+
+  }
+
+
+  .nav-links li {
+
+    width: 100%;
+
+  }
+
+
+  .nav-links a {
+
+    display: block;
+
+    padding: 15px 0;
+
+  }
+
+
+  .nav-links a::after {
+
+    display: none;
+
+  }
+
+
+  .menu-btn {
+
+    display: block;
+
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .classic-navbar {
+
+    height: 70px;
+
+    padding: 0 5%;
+
+  }
+
+
+  .brand-logo {
+
+    font-size: 24px;
+
+    letter-spacing: 2px;
+
+  }
+
+
+  .nav-shop,
+  .search-icon {
+
+    display: none;
+
+  }
+
+}
+
+:root {
+  --cream: #f6f0e5;
+  --dark-brown: #241a14;
+  --brown: #4b3425;
+  --gold: #b58a45;
+  --light-gold: #d7b878;
+  --white: #fffdf8;
+}
+
+.classic-hero {
+  min-height: calc(100vh - 75px);
+  padding: 70px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background:
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(181,138,69,0.12),
+      transparent 35%
+    ),
+    var(--cream);
+
+  overflow: hidden;
+}
+
+
+.hero-left {
+  width: 52%;
+  z-index: 2;
+}
+
+.hero-label {
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 22px;
+}
+
+.hero-left h1 {
+  color: var(--dark-brown);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(48px, 6vw, 82px);
+  line-height: 1.02;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.hero-left h1 span {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.hero-description {
+  max-width: 570px;
+  color: #665b52;
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 45px;
+}
+
+.gold-btn,
+.outline-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  transition: .3s;
+}
+
+.gold-btn {
+  background: var(--dark-brown);
+  color: white;
+  border: 1px solid var(--dark-brown);
+}
+
+.gold-btn:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.outline-btn {
+  color: var(--dark-brown);
+  border: 1px solid var(--gold);
+}
+
+.outline-btn:hover {
+  background: var(--gold);
+  color: white;
+}
+
+
+.hero-features {
+  display: flex;
+  gap: 45px;
+}
+
+.hero-features div {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-features strong {
+  color: var(--dark-brown);
+  font-family: Georgia, serif;
+  font-size: 23px;
+}
+
+.hero-features small {
+  color: #81766c;
+  margin-top: 5px;
+}
+
+.hero-right {
+  width: 43%;
+  height: 560px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+
+.gold-circle {
+  width: 430px;
+  height: 430px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #d7b878,
+      #b58a45
+    );
+
+  position: absolute;
+
+  box-shadow:
+    0 25px 60px rgba(75,52,37,.20);
+}
+
+
+.drink-image {
+  width: 500px;
+  max-height: 500px;
+  object-fit: contain;
+  position: relative;
+  z-index: 3;
+
+  transform: rotate(-7deg);
+
+  filter:
+    drop-shadow(
+      20px 30px 20px
+      rgba(36,26,20,.30)
+    );
+
+  transition: .4s;
+}
+
+.drink-image:hover {
+  transform:
+    rotate(0deg)
+    scale(1.05);
+}
+
+.product-badge {
+  position: absolute;
+
+  right: 0;
+  bottom: 75px;
+
+  width: 110px;
+  height: 110px;
+
+  border-radius: 50%;
+
+  background: var(--dark-brown);
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid var(--gold);
+
+  z-index: 5;
+
+  transform: rotate(10deg);
+}
+
+.product-badge span {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--light-gold);
+}
+
+.product-badge strong {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.feature-strip {
+  min-height: 130px;
+
+  padding: 30px 8%;
+
+  display: grid;
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 30px;
+
+  background: var(--dark-brown);
+  color: white;
+}
+
+.feature-box {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  border-right: 1px solid
+    rgba(255,255,255,.15);
+}
+
+.feature-box:last-child {
+  border-right: none;
+}
+
+.feature-box > span {
+  color: var(--light-gold);
+  font-size: 28px;
+}
+
+.feature-box h3 {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.feature-box p {
+  color: #bcb0a5;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+@media (max-width: 900px) {
+
+  .classic-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 6%;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-features {
+    justify-content: center;
+  }
+
+  .hero-right {
+    height: 470px;
+    margin-top: 30px;
+  }
+
+  .gold-circle {
+    width: 330px;
+    height: 330px;
+  }
+
+  .drink-image {
+    width: 220px;
+  }
+
+  .product-badge {
+    right: 10%;
+    bottom: 45px;
+  }
+
+  .feature-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-box {
+    border-right: none;
+    border-bottom: 1px solid
+      rgba(255,255,255,.15);
+    padding-bottom: 20px;
+  }
+
+  .feature-box:last-child {
+    border-bottom: none;
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  .hero-left h1 {
+    font-size: 46px;
+  }
+
+  .hero-features {
+    gap: 20px;
+  }
+
+  .hero-features strong {
+    font-size: 18px;
+  }
+
+  .hero-features small {
+    font-size: 11px;
+  }
+
+  .hero-right {
+    height: 400px;
+  }
+
+  .gold-circle {
+    width: 270px;
+    height: 270px;
+  }
+
+  .drink-image {
+    width: 190px;
+  }
+
+  .product-badge {
+    width: 85px;
+    height: 85px;
+  }
+}
+
+
+/* =================================
+   CLASSIC DRINK SECTION
+================================= */
+
+.drinks-section {
+
+  padding: 100px 7%;
+
+  background: #f6f0e5;
+
+  color: #241a14;
+
+}
+
+
+/* =================================
+   SECTION HEADING
+================================= */
+
+.section-heading {
+
+  text-align: center;
+
+  max-width: 650px;
+
+  margin: 0 auto 55px;
+
+}
+
+
+.section-heading span {
+
+  color: #b58a45;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+
+}
+
+
+.section-heading h2 {
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(38px, 5vw, 58px);
+
+  font-weight: 500;
+
+  margin: 12px 0;
+
+}
+
+
+.section-heading p {
+
+  color: #74685d;
+
+  line-height: 1.7;
+
+}
+
+
+/* =================================
+   GRID
+================================= */
+
+.drink-grid {
+
+  max-width: 1250px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 25px;
+
+}
+
+
+/* =================================
+   CARD
+================================= */
+
+.drink-card {
+
+  background: #fffdf8;
+
+  border: 1px solid
+    rgba(181,138,69,.25);
+
+  transition: .4s;
+
+  overflow: hidden;
+
+}
+
+
+.drink-card:hover {
+
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 20px 40px
+    rgba(36,26,20,.13);
+
+}
+
+
+/* =================================
+   IMAGE AREA
+================================= */
+
+.card-image {
+
+  height: 330px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #ead8b5,
+      #d4b878
+    );
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  position: relative;
+
+  overflow: hidden;
+
+}
+
+
+.card-image img {
+
+  width: 190px;
+
+  height: 280px;
+
+  object-fit: contain;
+
+  position: relative;
+
+  z-index: 2;
+
+  transition: .5s;
+
+  filter:
+    drop-shadow(
+      15px 20px 12px
+      rgba(36,26,20,.25)
+    );
+
+}
+
+
+.drink-card:hover
+.card-image img {
+
+  transform:
+    scale(1.08)
+    rotate(-3deg);
+
+}
+
+
+/* =================================
+   BADGE
+================================= */
+
+.badge {
+
+  position: absolute;
+
+  top: 16px;
+
+  left: 16px;
+
+  background: #241a14;
+
+  color: #fffdf8;
+
+  padding: 7px 11px;
+
+  font-size: 9px;
+
+  letter-spacing: 1.5px;
+
+  font-weight: bold;
+
+  z-index: 5;
+
+}
+
+
+.badge.new {
+
+  background: #b58a45;
+
+}
+
+
+.badge.premium {
+
+  background: #4b3425;
+
+}
+
+
+/* =================================
+   HEART
+================================= */
+
+.heart {
+
+  position: absolute;
+
+  top: 14px;
+
+  right: 14px;
+
+  width: 38px;
+
+  height: 38px;
+
+  border-radius: 50%;
+
+  border: 1px solid
+    rgba(36,26,20,.15);
+
+  background: #fffdf8;
+
+  color: #241a14;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  z-index: 5;
+
+  transition: .3s;
+
+}
+
+
+.heart:hover {
+
+  background: #241a14;
+
+  color: white;
+
+}
+
+
+/* =================================
+   CONTENT
+================================= */
+
+.card-content {
+
+  padding: 25px;
+
+}
+
+
+.rating {
+
+  color: #b58a45;
+
+  font-size: 13px;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 10px;
+
+}
+
+
+.rating span {
+
+  color: #8b8178;
+
+  letter-spacing: 0;
+
+  margin-left: 5px;
+
+  font-size: 11px;
+
+}
+
+
+.card-content h3 {
+
+  font-family: Georgia, serif;
+
+  font-size: 25px;
+
+  font-weight: 500;
+
+  margin-bottom: 10px;
+
+}
+
+
+.card-content p {
+
+  color: #756a61;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  min-height: 45px;
+
+}
+
+
+/* =================================
+   PRICE + CART
+================================= */
+
+.card-bottom {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 22px;
+
+}
+
+
+.price {
+
+  font-size: 20px;
+
+  color: #241a14;
+
+  font-weight: 700;
+
+}
+
+
+.price del {
+
+  color: #a69c93;
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  margin-left: 5px;
+
+}
+
+
+/* =================================
+   CART BUTTON
+================================= */
+
+.cart-btn {
+
+  border: none;
+
+  background: #241a14;
+
+  color: white;
+
+  padding: 11px 17px;
+
+  cursor: pointer;
+
+  font-weight: 700;
+
+  transition: .3s;
+
+}
+
+
+.cart-btn:hover {
+
+  background: #b58a45;
+
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 1100px) {
+
+  .drink-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .drinks-section {
+
+    padding: 70px 5%;
+
+  }
+
+  .drink-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .card-image {
+
+    height: 350px;
+
+  }
+
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.drinks-section {
+  padding: 100px 7%;
+  background: #f6f0e5;
+  color: #241a14;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.section-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 55px;
+}
+
+.section-heading span {
+  color: #b58a45;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.section-heading h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(40px, 5vw, 60px);
+  font-weight: 500;
+  margin: 12px 0;
+}
+
+.section-heading p {
+  color: #74685d;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.drink-grid {
+  max-width: 1250px;
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 25px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.drink-card {
+  background: #fffdf8;
+
+  border: 1px solid
+    rgba(181,138,69,.25);
+
+  overflow: hidden;
+
+  transition: .4s;
+}
+
+.drink-card:hover {
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 20px 40px
+    rgba(36,26,20,.13);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.card-image {
+  height: 320px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  background:
+    radial-gradient(
+      circle,
+      #ead8b5,
+      #d2b572
+    );
+}
+
+.card-image img {
+  width: 180px;
+  height: 275px;
+
+  object-fit: contain;
+
+  z-index: 2;
+
+  filter:
+    drop-shadow(
+      15px 20px 12px
+      rgba(36,26,20,.25)
+    );
+
+  transition: .5s;
+}
+
+.drink-card:hover
+.card-image img {
+  transform:
+    scale(1.08)
+    rotate(-3deg);
+}
+
+
+/* =========================
+   BADGES
+========================= */
+
+.badge {
+  position: absolute;
+
+  top: 15px;
+  left: 15px;
+
+  padding: 7px 10px;
+
+  background: #241a14;
+
+  color: white;
+
+  font-size: 9px;
+
+  letter-spacing: 1.5px;
+
+  font-weight: bold;
+
+  z-index: 4;
+}
+
+.badge.new {
+  background: #b58a45;
+}
+
+.badge.premium {
+  background: #4b3425;
+}
+
+
+/* =========================
+   HEART
+========================= */
+
+.heart {
+  position: absolute;
+
+  top: 13px;
+  right: 13px;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  border: 1px solid
+    rgba(36,26,20,.15);
+
+  background: #fffdf8;
+
+  color: #241a14;
+
+  font-size: 21px;
+
+  cursor: pointer;
+
+  z-index: 5;
+}
+
+.heart:hover {
+  background: #241a14;
+  color: white;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.card-content {
+  padding: 23px;
+}
+
+.rating {
+  color: #b58a45;
+
+  font-size: 12px;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 10px;
+}
+
+.rating span {
+  color: #8b8178;
+
+  letter-spacing: 0;
+
+  font-size: 11px;
+}
+
+.card-content h3 {
+  font-family: Georgia, serif;
+
+  font-size: 24px;
+
+  font-weight: 500;
+
+  margin-bottom: 9px;
+}
+
+.card-content p {
+  color: #756a61;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  min-height: 43px;
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+.card-bottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 20px;
+}
+
+.price {
+  font-size: 19px;
+
+  font-weight: 700;
+}
+
+.price del {
+  color: #a69c93;
+
+  font-size: 11px;
+
+  margin-left: 4px;
+}
+
+
+/* =========================
+   ADD BUTTON
+========================= */
+
+.cart-btn {
+  border: none;
+
+  background: #241a14;
+
+  color: white;
+
+  padding: 10px 16px;
+
+  cursor: pointer;
+
+  font-weight: 700;
+
+  transition: .3s;
+}
+
+.cart-btn:hover {
+  background: #b58a45;
+}
+
+
+/* =========================
+   VIEW MORE
+========================= */
+
+.view-more {
+  text-align: center;
+
+  margin-top: 50px;
+}
+
+#viewMoreBtn {
+  padding: 14px 30px;
+
+  background: transparent;
+
+  border: 1px solid #b58a45;
+
+  color: #241a14;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+#viewMoreBtn:hover {
+  background: #241a14;
+  color: white;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+  .drink-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .drinks-section {
+    padding: 70px 5%;
+  }
+
+  .drink-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-image {
+    height: 350px;
+  }
+
+}
+
+
+.flavors-page {
+
+  padding: 110px 7%;
+
+  background: #f6f0e5;
+
+  color: #241a14;
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.flavors-header {
+
+  max-width: 700px;
+
+  margin: 0 auto 65px;
+
+  text-align: center;
+
+}
+
+
+.flavors-header span {
+
+  color: #b58a45;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+
+}
+
+
+.flavors-header h1 {
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(42px, 6vw, 68px);
+
+  font-weight: 500;
+
+  margin: 15px 0;
+
+}
+
+
+.flavors-header h1 em {
+
+  color: #b58a45;
+
+  font-weight: 400;
+
+}
+
+
+.flavors-header p {
+
+  color: #74685d;
+
+  line-height: 1.8;
+
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.flavors-grid {
+
+  max-width: 1250px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 28px;
+
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.flavor-card {
+
+  min-height: 470px;
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  padding: 40px;
+
+  border: 1px solid
+    rgba(181,138,69,.25);
+
+  transition: .4s;
+
+}
+
+
+.flavor-card:hover {
+
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 25px 50px
+    rgba(36,26,20,.15);
+
+}
+
+
+/* =========================================
+   CARD COLORS
+========================================= */
+
+.berry {
+
+  background:
+    linear-gradient(
+      135deg,
+      #ead7cf,
+      #c49b91
+    );
+
+}
+
+
+.orange {
+
+  background:
+    linear-gradient(
+      135deg,
+      #f1dfbf,
+      #d9a44d
+    );
+
+}
+
+
+.lime {
+
+  background:
+    linear-gradient(
+      135deg,
+      #dce4cf,
+      #9fae75
+    );
+
+}
+
+
+.grape {
+
+  background:
+    linear-gradient(
+      135deg,
+      #ddd1df,
+      #9b7ba4
+    );
+
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.flavor-number {
+
+  position: absolute;
+
+  top: 25px;
+
+  left: 30px;
+
+  font-family: Georgia, serif;
+
+  font-size: 13px;
+
+  color: rgba(36,26,20,.6);
+
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.flavor-image {
+
+  width: 48%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+
+.flavor-image img {
+
+  width: 190px;
+
+  height: 330px;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      15px 25px 15px
+      rgba(36,26,20,.28)
+    );
+
+  transition: .5s;
+
+}
+
+
+.flavor-card:hover
+.flavor-image img {
+
+  transform:
+    scale(1.08)
+    rotate(-5deg);
+
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.flavor-content {
+
+  width: 52%;
+
+}
+
+
+.flavor-content > span {
+
+  color: #6c594a;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  font-weight: 700;
+
+}
+
+
+.flavor-content h2 {
+
+  font-family: Georgia, serif;
+
+  font-size: 32px;
+
+  font-weight: 500;
+
+  margin: 10px 0 15px;
+
+}
+
+
+.flavor-content p {
+
+  color: #594d44;
+
+  line-height: 1.7;
+
+  font-size: 14px;
+
+  margin-bottom: 25px;
+
+}
+
+
+.flavor-content a {
+
+  color: #241a14;
+
+  text-decoration: none;
+
+  font-weight: 700;
+
+  border-bottom: 1px solid #b58a45;
+
+  padding-bottom: 5px;
+
+  transition: .3s;
+
+}
+
+
+.flavor-content a:hover {
+
+  color: #b58a45;
+
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.flavor-cta {
+
+  max-width: 1250px;
+
+  margin: 45px auto 0;
+
+  padding: 35px 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: #241a14;
+
+  color: white;
+
+}
+
+
+.flavor-cta span {
+
+  color: #d7b878;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+}
+
+
+.flavor-cta h2 {
+
+  font-family: Georgia, serif;
+
+  font-size: 27px;
+
+  font-weight: 400;
+
+  margin-top: 7px;
+
+}
+
+
+.flavor-cta a {
+
+  text-decoration: none;
+
+  color: #241a14;
+
+  background: #d7b878;
+
+  padding: 14px 25px;
+
+  font-weight: 700;
+
+  transition: .3s;
+
+}
+
+
+.flavor-cta a:hover {
+
+  background: white;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .flavors-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .flavors-page {
+
+    padding: 75px 5%;
+
+  }
+
+  .flavor-card {
+
+    min-height: auto;
+
+    padding: 55px 25px 35px;
+
+    flex-direction: column;
+
+    text-align: center;
+
+  }
+
+  .flavor-image {
+
+    width: 100%;
+
+    margin-bottom: 20px;
+
+  }
+
+  .flavor-content {
+
+    width: 100%;
+
+  }
+
+  .flavor-image img {
+
+    width: 160px;
+
+    height: 260px;
+
+  }
+
+  .flavor-cta {
+
+    flex-direction: column;
+
+    gap: 25px;
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+  }
+
+}
+
+
+
+.story-page {
+
+  --cream: #f6f0e5;
+  --dark: #241a14;
+  --brown: #4b3425;
+  --gold: #b58a45;
+  --light-gold: #d7b878;
+  --white: #fffdf8;
+
+  background: var(--cream);
+
+  color: var(--dark);
+
+}
+
+
+/* =========================================
+   STORY HERO
+========================================= */
+
+.story-hero {
+
+  min-height: 650px;
+
+  padding: 90px 8%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 70px;
+
+}
+
+
+.story-hero-content {
+
+  width: 48%;
+
+}
+
+
+.story-hero-content > span,
+.story-content > div > span,
+.values-heading > span,
+.journey-heading > span {
+
+  color: var(--gold);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+
+}
+
+
+.story-hero h1 {
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(50px, 6vw, 78px);
+
+  line-height: 1;
+
+  font-weight: 500;
+
+  margin: 20px 0 25px;
+
+}
+
+
+.story-hero h1 em {
+
+  color: var(--gold);
+
+  font-weight: 400;
+
+}
+
+
+.story-hero p {
+
+  max-width: 520px;
+
+  color: #6e6258;
+
+  font-size: 17px;
+
+  line-height: 1.8;
+
+}
+
+
+/* =========================================
+   HERO IMAGE
+========================================= */
+
+.story-hero-image {
+
+  width: 45%;
+
+  position: relative;
+
+}
+
+
+.story-hero-image img {
+
+  width: 100%;
+
+  height: 520px;
+
+  object-fit: cover;
+
+  filter: sepia(10%);
+
+}
+
+
+.year-badge {
+
+  position: absolute;
+
+  bottom: -25px;
+
+  left: -30px;
+
+  width: 130px;
+
+  height: 130px;
+
+  background: var(--dark);
+
+  color: white;
+
+  border-radius: 50%;
+
+  border: 2px solid var(--gold);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+}
+
+
+.year-badge strong {
+
+  font-family: Georgia, serif;
+
+  font-size: 28px;
+
+  color: var(--light-gold);
+
+}
+
+
+.year-badge small {
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  margin-top: 5px;
+
+}
+
+
+/* =========================================
+   STORY CONTENT
+========================================= */
+
+.story-content {
+
+  padding: 110px 8%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 90px;
+
+  background: var(--white);
+
+}
+
+
+.story-image,
+.story-text {
+
+  width: 50%;
+
+}
+
+
+.story-image img {
+
+  width: 100%;
+
+  max-height: 600px;
+
+  object-fit: cover;
+
+}
+
+
+.story-text h2 {
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(38px, 4vw, 55px);
+
+  font-weight: 500;
+
+  line-height: 1.1;
+
+  margin: 18px 0 25px;
+
+}
+
+
+.story-text p {
+
+  color: #6e6258;
+
+  line-height: 1.8;
+
+  margin-bottom: 18px;
+
+}
+
+
+.signature {
+
+  margin-top: 35px;
+
+  padding-left: 20px;
+
+  border-left: 2px solid var(--gold);
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+.signature span {
+
+  color: #897b6e;
+
+  font-size: 12px;
+
+}
+
+
+.signature strong {
+
+  font-family: Georgia, serif;
+
+  font-size: 25px;
+
+  letter-spacing: 3px;
+
+  color: var(--gold);
+
+  margin-top: 5px;
+
+}
+
+
+/* =========================================
+   VALUES
+========================================= */
+
+.story-values {
+
+  padding: 110px 8%;
+
+}
+
+
+.values-heading {
+
+  text-align: center;
+
+  margin-bottom: 55px;
+
+}
+
+
+.values-heading h2,
+.journey-heading h2 {
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(40px, 5vw, 58px);
+
+  font-weight: 500;
+
+  margin-top: 15px;
+
+}
+
+
+.values-heading em,
+.journey-heading em {
+
+  color: var(--gold);
+
+  font-weight: 400;
+
+}
+
+
+.values-grid {
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 20px;
+
+}
+
+
+.value-card {
+
+  padding: 35px 25px;
+
+  background: rgba(255,255,255,.45);
+
+  border: 1px solid
+    rgba(181,138,69,.25);
+
+  text-align: center;
+
+  transition: .3s;
+
+}
+
+
+.value-card:hover {
+
+  background: var(--dark);
+
+  color: white;
+
+  transform: translateY(-8px);
+
+}
+
+
+.value-icon {
+
+  color: var(--gold);
+
+  font-size: 30px;
+
+  margin-bottom: 20px;
+
+}
+
+
+.value-card h3 {
+
+  font-family: Georgia, serif;
+
+  font-size: 22px;
+
+  font-weight: 500;
+
+  margin-bottom: 12px;
+
+}
+
+
+.value-card p {
+
+  color: #756a61;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+}
+
+
+.value-card:hover p {
+
+  color: #c8beb5;
+
+}
+
+
+/* =========================================
+   JOURNEY
+========================================= */
+
+.journey {
+
+  padding: 110px 8%;
+
+  background: var(--white);
+
+}
+
+
+.journey-heading {
+
+  text-align: center;
+
+  margin-bottom: 65px;
+
+}
+
+
+.timeline {
+
+  max-width: 850px;
+
+  margin: auto;
+
+}
+
+
+.timeline-item {
+
+  display: grid;
+
+  grid-template-columns: 100px 25px 1fr;
+
+  gap: 20px;
+
+  min-height: 150px;
+
+}
+
+
+.timeline-year {
+
+  font-family: Georgia, serif;
+
+  font-size: 25px;
+
+  color: var(--gold);
+
+  text-align: right;
+
+}
+
+
+.timeline-dot {
+
+  width: 13px;
+
+  height: 13px;
+
+  background: var(--gold);
+
+  border-radius: 50%;
+
+  margin-top: 7px;
+
+  position: relative;
+
+}
+
+
+.timeline-dot::after {
+
+  content: "";
+
+  position: absolute;
+
+  top: 13px;
+
+  left: 5px;
+
+  width: 1px;
+
+  height: 140px;
+
+  background: #d8c6a5;
+
+}
+
+
+.timeline-item:last-child
+.timeline-dot::after {
+
+  display: none;
+
+}
+
+
+.timeline-content h3 {
+
+  font-family: Georgia, serif;
+
+  font-size: 25px;
+
+  font-weight: 500;
+
+  margin-bottom: 8px;
+
+}
+
+
+.timeline-content p {
+
+  color: #74685d;
+
+  line-height: 1.7;
+
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.story-cta {
+
+  margin: 0 7% 80px;
+
+  padding: 45px 50px;
+
+  background: var(--dark);
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+}
+
+
+.story-cta span {
+
+  color: var(--light-gold);
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+}
+
+
+.story-cta h2 {
+
+  font-family: Georgia, serif;
+
+  font-weight: 400;
+
+  font-size: 30px;
+
+  margin-top: 8px;
+
+}
+
+
+.story-cta a {
+
+  padding: 15px 25px;
+
+  background: var(--light-gold);
+
+  color: var(--dark);
+
+  text-decoration: none;
+
+  font-weight: 700;
+
+  transition: .3s;
+
+}
+
+
+.story-cta a:hover {
+
+  background: white;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .story-hero {
+
+    flex-direction: column;
+
+    text-align: center;
+
+  }
+
+  .story-hero-content,
+  .story-hero-image {
+
+    width: 100%;
+
+  }
+
+  .story-hero p {
+
+    margin: auto;
+
+  }
+
+  .story-content {
+
+    flex-direction: column;
+
+    gap: 50px;
+
+  }
+
+  .story-image,
+  .story-text {
+
+    width: 100%;
+
+  }
+
+  .values-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .story-hero {
+
+    padding: 70px 5%;
+
+  }
+
+  .story-hero-image img {
+
+    height: 400px;
+
+  }
+
+  .year-badge {
+
+    left: 10px;
+
+  }
+
+  .story-content,
+  .story-values,
+  .journey {
+
+    padding: 75px 5%;
+
+  }
+
+  .values-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .timeline-item {
+
+    grid-template-columns:
+      65px 20px 1fr;
+
+    gap: 10px;
+
+  }
+
+  .timeline-year {
+
+    font-size: 18px;
+
+  }
+
+  .story-cta {
+
+    margin: 0 5% 50px;
+
+    padding: 35px 25px;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    gap: 25px;
+
+  }
+
+}
+
+
+/* =========================================
+   CLASSIC CONTACT PAGE
+========================================= */
+
+.contact-page {
+
+  --cream: #f6f0e5;
+  --dark: #241a14;
+  --brown: #4b3425;
+  --gold: #b58a45;
+  --light-gold: #d7b878;
+  --white: #fffdf8;
+
+  background: var(--cream);
+
+  color: var(--dark);
+
+  padding: 100px 7%;
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.contact-header {
+
+  max-width: 750px;
+
+  text-align: center;
+
+  margin: 0 auto 70px;
+
+}
+
+
+.contact-header > span {
+
+  color: var(--gold);
+
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  font-weight: 700;
+
+}
+
+
+.contact-header h1 {
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(45px, 6vw, 70px);
+
+  font-weight: 500;
+
+  line-height: 1.05;
+
+  margin: 15px 0 20px;
+
+}
+
+
+.contact-header h1 em {
+
+  color: var(--gold);
+
+  font-weight: 400;
+
+}
+
+
+.contact-header p {
+
+  color: #71655b;
+
+  line-height: 1.8;
+
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.contact-container {
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    42% 58%;
+
+  background: var(--white);
+
+  box-shadow:
+    0 20px 50px
+    rgba(36,26,20,.08);
+
+}
+
+
+/* =========================================
+   CONTACT INFO
+========================================= */
+
+.contact-info {
+
+  padding: 55px 45px;
+
+  background: var(--dark);
+
+  color: white;
+
+}
+
+
+.info-label {
+
+  color: var(--light-gold);
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+}
+
+
+.contact-info h2 {
+
+  font-family: Georgia, serif;
+
+  font-size: 38px;
+
+  font-weight: 400;
+
+  line-height: 1.1;
+
+  margin: 15px 0;
+
+}
+
+
+.info-text {
+
+  color: #c1b6ac;
+
+  line-height: 1.7;
+
+  font-size: 14px;
+
+  margin-bottom: 35px;
+
+}
+
+
+/* =========================================
+   INFO ITEM
+========================================= */
+
+.info-item {
+
+  display: flex;
+
+  gap: 18px;
+
+  margin-bottom: 25px;
+
+}
+
+
+.info-icon {
+
+  width: 42px;
+
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid
+    rgba(215,184,120,.5);
+
+  color: var(--light-gold);
+
+  flex-shrink: 0;
+
+}
+
+
+.info-item span {
+
+  display: block;
+
+  color: #a99c91;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 5px;
+
+}
+
+
+.info-item a,
+.info-item p {
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+}
+
+
+.info-item a:hover {
+
+  color: var(--light-gold);
+
+}
+
+
+/* =========================================
+   HOURS
+========================================= */
+
+.opening-hours {
+
+  margin-top: 35px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid
+    rgba(255,255,255,.15);
+
+}
+
+
+.opening-hours > span {
+
+  color: var(--light-gold);
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+}
+
+
+.opening-hours div {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 14px;
+
+}
+
+
+.opening-hours strong {
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+}
+
+
+.opening-hours small {
+
+  color: #aaa;
+
+}
+
+
+/* =========================================
+   SOCIAL
+========================================= */
+
+.social-links {
+
+  display: flex;
+
+  gap: 18px;
+
+  margin-top: 30px;
+
+}
+
+
+.social-links a {
+
+  color: #aaa;
+
+  font-size: 11px;
+
+  text-decoration: none;
+
+}
+
+
+.social-links a:hover {
+
+  color: var(--light-gold);
+
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.contact-form-box {
+
+  padding: 55px;
+
+}
+
+
+.form-top > span {
+
+  color: var(--gold);
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  font-weight: 700;
+
+}
+
+
+.form-top h2 {
+
+  font-family: Georgia, serif;
+
+  font-size: 35px;
+
+  font-weight: 500;
+
+  margin: 12px 0 35px;
+
+}
+
+
+.form-row {
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 20px;
+
+}
+
+
+.input-group {
+
+  display: flex;
+
+  flex-direction: column;
+
+  margin-bottom: 22px;
+
+}
+
+
+.input-group label {
+
+  color: var(--brown);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  margin-bottom: 8px;
+
+}
+
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+
+  width: 100%;
+
+  padding: 14px;
+
+  background: #faf7f0;
+
+  border: 1px solid #ddd3c5;
+
+  outline: none;
+
+  color: var(--dark);
+
+  font-size: 14px;
+
+  transition: .3s;
+
+}
+
+
+.input-group textarea {
+
+  resize: vertical;
+
+}
+
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+
+  border-color: var(--gold);
+
+  background: white;
+
+}
+
+
+/* =========================================
+   SEND BUTTON
+========================================= */
+
+.send-btn {
+
+  width: 100%;
+
+  padding: 16px;
+
+  border: none;
+
+  background: var(--dark);
+
+  color: white;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: .3s;
+
+}
+
+
+.send-btn:hover {
+
+  background: var(--gold);
+
+}
+
+
+.form-message {
+
+  text-align: center;
+
+  margin-top: 15px;
+
+  font-size: 13px;
+
+  color: #6d8a58;
+
+}
+
+
+/* =========================================
+   LOCATION
+========================================= */
+
+.location-section {
+
+  max-width: 1200px;
+
+  margin: 70px auto 0;
+
+  display: grid;
+
+  grid-template-columns:
+    38% 62%;
+
+  background: var(--dark);
+
+  color: white;
+
+}
+
+
+.location-text {
+
+  padding: 55px 45px;
+
+}
+
+
+.location-text > span {
+
+  color: var(--light-gold);
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+}
+
+
+.location-text h2 {
+
+  font-family: Georgia, serif;
+
+  font-size: 40px;
+
+  font-weight: 400;
+
+  margin: 15px 0;
+
+}
+
+
+.location-text h2 em {
+
+  color: var(--light-gold);
+
+}
+
+
+.location-text p {
+
+  color: #bdb1a6;
+
+  line-height: 1.7;
+
+  margin-bottom: 25px;
+
+}
+
+
+.direction-btn {
+
+  display: inline-block;
+
+  color: var(--dark);
+
+  background: var(--light-gold);
+
+  padding: 13px 22px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+}
+
+
+/* =========================================
+   MAP
+========================================= */
+
+.map-box {
+
+  min-height: 300px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: #d9d0c0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+
+.map-grid {
+
+  position: absolute;
+
+  inset: 0;
+
+  opacity: .4;
+
+  background-image:
+    linear-gradient(
+      35deg,
+      transparent 45%,
+      #a59b8b 46%,
+      transparent 48%
+    ),
+    linear-gradient(
+      120deg,
+      transparent 45%,
+      #a59b8b 46%,
+      transparent 48%
+    );
+
+  background-size: 80px 80px;
+
+}
+
+
+.map-pin {
+
+  position: relative;
+
+  z-index: 2;
+
+  text-align: center;
+
+}
+
+
+.map-pin div {
+
+  width: 65px;
+
+  height: 65px;
+
+  margin: auto;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: var(--dark);
+
+  color: var(--light-gold);
+
+  font-size: 28px;
+
+  border: 3px solid var(--gold);
+
+}
+
+
+.map-pin span {
+
+  display: block;
+
+  margin-top: 8px;
+
+  color: var(--dark);
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+}
+
+
+.map-box > p {
+
+  position: absolute;
+
+  bottom: 15px;
+
+  right: 20px;
+
+  color: var(--dark);
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .contact-container,
+  .location-section {
+
+    grid-template-columns: 1fr;
+
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .contact-page {
+
+    padding: 70px 5%;
+
+  }
+
+  .contact-info,
+  .contact-form-box {
+
+    padding: 35px 25px;
+
+  }
+
+  .form-row {
+
+    grid-template-columns: 1fr;
+
+    gap: 0;
+
+  }
+
+  .opening-hours div {
+
+    flex-direction: column;
+
+    gap: 3px;
+
+  }
+
+  .location-text {
+
+    padding: 40px 25px;
+
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+  </style>
+</head>
+  <body>
+   
+<nav class="classic-navbar">
+
+
+  <a href="#" class="brand-logo">
+    FIZZ<span>ORA</span>
+  </a>
+
+  
+  <ul class="nav-links">
+    <li><a href="home" class="active">Home</a></li>
+    <li><a href="drinks">Drinks</a></li>
+    <li><a href="flavors">Flavors</a></li>
+    <li><a href="about">Our Story</a></li>
+    <li><a href="contact">Contact</a></li>
+  </ul>
+
+  <div class="nav-right">
+
+    <a href="search" class="search-icon">⌕</a>
+
+    <a href="shop" class="nav-shop">
+      Shop Now
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()">
+      ☰
+    </button>
+
+  </div>
+
+</nav>
+
+
+<section class="classic-hero" id="home">
+
+  <div class="hero-left">
+
+    <p class="hero-label">CRAFTED FOR EVERY MOMENT</p>
+
+    <h1>
+      A Classic Taste.<br>
+      <span>Made to Refresh.</span>
+    </h1>
+
+    <p class="hero-description">
+      Discover a timeless blend of rich flavor, refreshing taste,
+      and premium quality. Every bottle is carefully crafted
+      for those who appreciate the finer things.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#drinks" class="gold-btn">Explore Drinks</a>
+      <a href="#about" class="outline-btn">Our Story</a>
+    </div>
+
+    <div class="hero-features">
+      <div>
+        <strong>100%</strong>
+        <small>Premium Taste</small>
+      </div>
+
+      <div>
+        <strong>25+</strong>
+        <small>Years of Craft</small>
+      </div>
+
+      <div>
+        <strong>4.9★</strong>
+        <small>Customer Rating</small>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="hero-right">
+
+    <div class="gold-circle"></div>
+
+   
+    <img
+      src=""
+      alt="Premium Classic Drink"
+      class="drink-image"
+    >
+
+    <div class="product-badge">
+      <span>PREMIUM</span>
+      <strong>EST. 2026</strong>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="drinks-section" id="drinks">
+
+  <div class="section-heading">
+    <span>OUR COLLECTION</span>
+    <h2>Signature Drinks</h2>
+    <p>
+      Discover our carefully crafted collection of
+      refreshing premium drinks.
+    </p>
+  </div>
+
+
+  <div class="drink-grid">
+
+    <!-- CARD 1 -->
+    <div class="drink-card">
+
+      <div class="card-image">
+        <span class="badge">BEST SELLER</span>
+
+        <img src="https://kuvings.com/cdn/shop/articles/dde5e91a547eb00189df2ed787a7d0e1_0f6bfe28-6146-42e8-ad8b-5a9e150fedc3.jpg?v=1754437838&width=900" alt="Berry Classic Drink">
+
+        <button class="heart">♡</button>
+      </div>
+
+      <div class="card-content">
+
+        <div class="rating">
+          ★★★★★
+          <span>(128)</span>
+        </div>
+
+        <h3>Berry Classic</h3>
+
+        <p>
+          A rich berry blend with a smooth,
+          refreshing finish.
+        </p>
+
+        <div class="card-bottom">
+
+          <div class="price">
+            ₹149
+            <del>₹179</del>
+          </div>
+
+          <button class="cart-btn">
+            Add +
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- CARD 2 -->
+    <div class="drink-card">
+
+      <div class="card-image">
+
+        <span class="badge new">NEW</span>
+
+        <img src="https://passthesushi.com/wp-content/uploads/2023/09/bourbon-gold-rush-cocktail-22.jpg" alt="Golden Orange Drink">
+
+        <button class="heart">♡</button>
+
+      </div>
+
+      <div class="card-content">
+
+        <div class="rating">
+          ★★★★★
+          <span>(96)</span>
+        </div>
+
+        <h3>Golden Orange</h3>
+
+        <p>
+          Bright citrus flavor with a
+          perfectly balanced sweetness.
+        </p>
+
+        <div class="card-bottom">
+
+          <div class="price">
+            ₹139
+            <del>₹169</del>
+          </div>
+
+          <button class="cart-btn">
+            Add +
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- CARD 3 -->
+    <div class="drink-card">
+
+      <div class="card-image">
+
+        <span class="badge">POPULAR</span>
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzQKEHgvi7HPUfsFjrjdo8nyOdRWpgwqp09NMok_t-pg7pFBwaLGevRPM&s=10" alt="Mint Lime Drink">
+
+        <button class="heart">♡</button>
+
+      </div>
+
+      <div class="card-content">
+
+        <div class="rating">
+          ★★★★★
+          <span>(154)</span>
+        </div>
+
+        <h3>Mint Lime</h3>
+
+        <p>
+          Cool mint combined with fresh
+          and zesty lime.
+        </p>
+
+        <div class="card-bottom">
+
+          <div class="price">
+            ₹159
+            <del>₹189</del>
+          </div>
+
+          <button class="cart-btn">
+            Add +
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- CARD 4 -->
+    <div class="drink-card">
+
+      <div class="card-image">
+
+        <span class="badge premium">PREMIUM</span>
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcysHQ0AQJMIdtx4ac9d0XXp9c92cS9PJj5SppDEJMmKgdPrsM91iDX2o&s=10" alt="Classic Grape Drink">
+
+        <button class="heart">♡</button>
+
+      </div>
+
+      <div class="card-content">
+
+        <div class="rating">
+          ★★★★★
+          <span>(82)</span>
+        </div>
+
+        <h3>Royal Grape</h3>
+
+        <p>
+          Deep grape flavor with a
+          sophisticated smooth finish.
+        </p>
+
+        <div class="card-bottom">
+
+          <div class="price">
+            ₹179
+            <del>₹209</del>
+          </div>
+
+          <button class="cart-btn">
+            Add +
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= MORE DRINK CARDS ================= -->
+
+<section class="drinks-section" id="drinks">
+
+  <div class="section-heading">
+    <span>THE COLLECTION</span>
+    <h2>Explore Our Drinks</h2>
+    <p>Find the perfect flavor for every occasion.</p>
+  </div>
+
+  <div class="drink-grid">
+
+    <!-- 01 -->
+    <div class="drink-card">
+      <div class="card-image">
+        <span class="badge">BEST SELLER</span>
+        <img src="https://kuvings.com/cdn/shop/articles/dde5e91a547eb00189df2ed787a7d0e1_0f6bfe28-6146-42e8-ad8b-5a9e150fedc3.jpg?v=1754437838&width=900" alt="Berry Classic">
+        <button class="heart">♡</button>
+      </div>
+
+      <div class="card-content">
+        <div class="rating">★★★★★ <span>(128)</span></div>
+        <h3>Berry Classic</h3>
+        <p>Rich berry flavor with a smooth refreshing finish.</p>
+
+        <div class="card-bottom">
+          <div class="price">₹149 <del>₹179</del></div>
+          <button class="cart-btn">Add +</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 02 -->
+    <div class="drink-card">
+      <div class="card-image">
+        <span class="badge new">NEW</span>
+        <img src="https://passthesushi.com/wp-content/uploads/2023/09/bourbon-gold-rush-cocktail-22.jpg" alt="Golden Orange">
+        <button class="heart">♡</button>
+      </div>
+
+      <div class="card-content">
+        <div class="rating">★★★★★ <span>(96)</span></div>
+        <h3>Golden Orange</h3>
+        <p>Bright citrus flavor with perfectly balanced sweetness.</p>
+
+        <div class="card-bottom">
+          <div class="price">₹139 <del>₹169</del></div>
+          <button class="cart-btn">Add +</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 03 -->
+    <div class="drink-card">
+      <div class="card-image">
+        <span class="badge">POPULAR</span>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzQKEHgvi7HPUfsFjrjdo8nyOdRWpgwqp09NMok_t-pg7pFBwaLGevRPM&s=10" alt="Mint Lime">
+        <button class="heart">♡</button>
+      </div>
+
+      <div class="card-content">
+        <div class="rating">★★★★★ <span>(154)</span></div>
+        <h3>Mint Lime</h3>
+        <p>Cool mint combined with fresh and zesty lime.</p>
+
+        <div class="card-bottom">
+          <div class="price">₹159 <del>₹189</del></div>
+          <button class="cart-btn">Add +</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 04 -->
+    <div class="drink-card">
+      <div class="card-image">
+        <span class="badge premium">PREMIUM</span>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcysHQ0AQJMIdtx4ac9d0XXp9c92cS9PJj5SppDEJMmKgdPrsM91iDX2o&s=10" alt="Royal Grape">
+        <button class="heart">♡</button>
+      </div>
+
+      <div class="card-content">
+        <div class="rating">★★★★★ <span>(82)</span></div>
+        <h3>Royal Grape</h3>
+        <p>Deep grape flavor with a sophisticated smooth finish.</p>
+
+        <div class="card-bottom">
+          <div class="price">₹179 <del>₹209</del></div>
+          <button class="cart-btn">Add +</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 05 -->
+    <div class="drink-card">
+      <div class="card-image">
+        <span class="badge">FRESH</span>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGOajisfELWjLRN1zp5igM4DpHWmlEsfkrrxf1fHtrgbCRiGcuyr0BVHA&s=10" alt="Classic Lemon">
+        <button class="heart">♡</button>
+      </div>
+
+      <div class="card-content">
+        <div class="rating">★★★★★ <span>(73)</span></div>
+        <h3>Classic Lemon</h3>
+        <p>Fresh lemon taste with a crisp and clean finish.</p>
+
+        <div class="card-bottom">
+          <div class="price">₹129 <del>₹159</del></div>
+          <button class="cart-btn">Add +</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 06 -->
+    <div class="drink-card">
+      <div class="card-image">
+        <span class="badge new">LIMITED</span>
+        <img src="https://mixthatdrink.com/wp-content/uploads/2013/01/peach-fizz-1-750x1123.jpg" alt="Peach Fizz">
+        <button class="heart">♡</button>
+      </div>
+
+      <div class="card-content">
+        <div class="rating">★★★★★ <span>(61)</span></div>
+        <h3>Peach Fizz</h3>
+        <p>Sweet peach flavor with a delicate sparkling finish.</p>
+
+        <div class="card-bottom">
+          <div class="price">₹169 <del>₹199</del></div>
+          <button class="cart-btn">Add +</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 07 -->
+    <div class="drink-card">
+      <div class="card-image">
+        <span class="badge premium">SIGNATURE</span>
+        <img src="https://www.midwestliving.com/thmb/zzwo8qv6UqyJJalF13bxp87kexs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/100048252_r47a935c0c504c1e0df9c596b4a240dd9091c732a-bfc52cc31df94c2ba8d25a5d8fe23878.jpg" alt="Vanilla Cream">
+        <button class="heart">♡</button>
+      </div>
+
+      <div class="card-content">
+        <div class="rating">★★★★★ <span>(91)</span></div>
+        <h3>Vanilla Cream</h3>
+        <p>Elegant vanilla flavor with a rich creamy texture.</p>
+
+        <div class="card-bottom">
+          <div class="price">₹189 <del>₹219</del></div>
+          <button class="cart-btn">Add +</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 08 -->
+    <div class="drink-card">
+      <div class="card-image">
+        <span class="badge">FAVORITE</span>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPXi8pBO_bA8pSFHyRjtRQ1wnypD6NRj5p-KnDrNy9FWvDO9IvhVSYv3M&s=10" alt="Apple Spark">
+        <button class="heart">♡</button>
+      </div>
+
+      <div class="card-content">
+        <div class="rating">★★★★★ <span>(116)</span></div>
+        <h3>Apple Spark</h3>
+        <p>Crisp green apple with a refreshing sparkling taste.</p>
+
+        <div class="card-bottom">
+          <div class="price">₹149 <del>₹179</del></div>
+          <button class="cart-btn">Add +</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- VIEW MORE -->
+  <div class="view-more">
+    <button id="viewMoreBtn">
+      View All Drinks →
+    </button>
+  </div>
+
+</section>
+
+<!-- ================= FLAVORS PAGE ================= -->
+
+<section class="flavors-page" id="flavors">
+
+  <!-- HEADER -->
+  <div class="flavors-header">
+    <span>DISCOVER THE TASTE</span>
+
+    <h1>
+      Our Signature <em>Flavors</em>
+    </h1>
+
+    <p>
+      From refreshing citrus to rich berries, discover
+      a flavor crafted for every mood.
+    </p>
+  </div>
+
+
+  <!-- FLAVOR CARDS -->
+  <div class="flavors-grid">
+
+
+    <!-- BERRY -->
+    <div class="flavor-card berry">
+
+      <div class="flavor-number">01</div>
+
+      <div class="flavor-image">
+        <img src="berry-drink.png" alt="Berry Classic">
+      </div>
+
+      <div class="flavor-content">
+        <span>FRUITY & REFRESHING</span>
+
+        <h2>Berry Classic</h2>
+
+        <p>
+          A delicious combination of ripe berries
+          with a smooth and refreshing finish.
+        </p>
+
+        <a href="#shop">
+          Explore Flavor →
+        </a>
+      </div>
+
+    </div>
+
+
+    <!-- ORANGE -->
+    <div class="flavor-card orange">
+
+      <div class="flavor-number">02</div>
+
+      <div class="flavor-image">
+        <img src="orange-drink.png" alt="Golden Orange">
+      </div>
+
+      <div class="flavor-content">
+        <span>CITRUS & BRIGHT</span>
+
+        <h2>Golden Orange</h2>
+
+        <p>
+          Fresh orange notes with a perfectly
+          balanced sweet and citrusy taste.
+        </p>
+
+        <a href="#shop">
+          Explore Flavor →
+        </a>
+      </div>
+
+    </div>
+
+
+    <!-- LIME -->
+    <div class="flavor-card lime">
+
+      <div class="flavor-number">03</div>
+
+      <div class="flavor-image">
+        <img src="lime-drink.png" alt="Mint Lime">
+      </div>
+
+      <div class="flavor-content">
+        <span>COOL & ZESTY</span>
+
+        <h2>Mint Lime</h2>
+
+        <p>
+          Crisp lime blended with cool mint for
+          a clean and refreshing experience.
+        </p>
+
+        <a href="#shop">
+          Explore Flavor →
+        </a>
+      </div>
+
+    </div>
+
+
+    <!-- GRAPE -->
+    <div class="flavor-card grape">
+
+      <div class="flavor-number">04</div>
+
+      <div class="flavor-image">
+        <img src="grape-drink.png" alt="Royal Grape">
+      </div>
+
+      <div class="flavor-content">
+        <span>RICH & ELEGANT</span>
+
+        <h2>Royal Grape</h2>
+
+        <p>
+          Deep grape flavor with a sophisticated
+          and smooth finish.
+        </p>
+
+        <a href="#shop">
+          Explore Flavor →
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- BOTTOM CTA -->
+  <div class="flavor-cta">
+
+    <div>
+      <span>CAN'T CHOOSE?</span>
+
+      <h2>
+        Find Your Perfect Flavor
+      </h2>
+    </div>
+
+    <a href="#drinks">
+      View All Drinks →
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ================= OUR STORY PAGE ================= -->
+
+<section class="story-page" id="about">
+
+  <!-- HERO -->
+  <div class="story-hero">
+
+    <div class="story-hero-content">
+
+      <span>OUR STORY</span>
+
+      <h1>
+        Crafted With
+        <em>Passion.</em>
+      </h1>
+
+      <p>
+        Every great drink begins with a story.
+        Ours began with a simple idea — to create
+        something timeless, refreshing and unforgettable.
+      </p>
+
+    </div>
+
+    <div class="story-hero-image">
+
+      <img
+        src="our-story.jpg"
+        alt="Our Story"
+      >
+
+      <div class="year-badge">
+        <strong>2026</strong>
+        <small>OUR JOURNEY</small>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- STORY -->
+  <div class="story-content">
+
+    <div class="story-image">
+
+      <img
+        src="story-bottle.jpg"
+        alt="Our Premium Drink"
+      >
+
+    </div>
+
+    <div class="story-text">
+
+      <span>THE BEGINNING</span>
+
+      <h2>
+        From A Simple Idea
+        To A Signature Taste.
+      </h2>
+
+      <p>
+        FIZZORA was born from a love for exceptional
+        flavors and beautiful moments. We wanted to
+        create drinks that feel just as special as the
+        occasions they are enjoyed on.
+      </p>
+
+      <p>
+        From selecting the finest ingredients to
+        perfecting every flavor, we believe that
+        quality should never be compromised.
+      </p>
+
+      <div class="signature">
+        <span>Made with passion</span>
+        <strong>FIZZORA</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- VALUES -->
+  <div class="story-values">
+
+    <div class="values-heading">
+
+      <span>WHAT WE BELIEVE</span>
+
+      <h2>
+        Made With
+        <em>Purpose.</em>
+      </h2>
+
+    </div>
+
+
+    <div class="values-grid">
+
+      <div class="value-card">
+
+        <div class="value-icon">✦</div>
+
+        <h3>Premium Quality</h3>
+
+        <p>
+          We carefully select ingredients and
+          focus on quality in every detail.
+        </p>
+
+      </div>
+
+
+      <div class="value-card">
+
+        <div class="value-icon">◈</div>
+
+        <h3>Authentic Flavor</h3>
+
+        <p>
+          Every flavor is thoughtfully crafted
+          to create a memorable experience.
+        </p>
+
+      </div>
+
+
+      <div class="value-card">
+
+        <div class="value-icon">✧</div>
+
+        <h3>Timeless Design</h3>
+
+        <p>
+          From the bottle to the brand,
+          simplicity and elegance guide us.
+        </p>
+
+      </div>
+
+
+      <div class="value-card">
+
+        <div class="value-icon">◇</div>
+
+        <h3>Made For Moments</h3>
+
+        <p>
+          Our drinks are created to make
+          everyday moments feel special.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- TIMELINE -->
+  <div class="journey">
+
+    <div class="journey-heading">
+
+      <span>OUR JOURNEY</span>
+
+      <h2>
+        A Few Moments
+        <em>That Made Us.</em>
+      </h2>
+
+    </div>
+
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+
+        <div class="timeline-year">2026</div>
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+
+          <h3>The Beginning</h3>
+
+          <p>
+            FIZZORA started with a vision to
+            create premium drinks with timeless
+            character.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <div class="timeline-year">2027</div>
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+
+          <h3>First Collection</h3>
+
+          <p>
+            Our first signature collection brought
+            together carefully crafted flavors.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <div class="timeline-year">2028</div>
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+
+          <h3>A Growing Community</h3>
+
+          <p>
+            FIZZORA became part of celebrations,
+            gatherings and everyday moments.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FINAL CTA -->
+  <div class="story-cta">
+
+    <div>
+
+      <span>THE STORY CONTINUES</span>
+
+      <h2>
+        Ready To Taste
+        The Difference?
+      </h2>
+
+    </div>
+
+    <a href="#drinks">
+      Explore Our Drinks →
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- ================= CONTACT PAGE ================= -->
+
+<section class="contact-page" id="contact">
+
+  <!-- HEADER -->
+  <div class="contact-header">
+    <span>GET IN TOUCH</span>
+
+    <h1>
+      Let's Start A
+      <em>Conversation.</em>
+    </h1>
+
+    <p>
+      Have a question about our drinks, want to work with us,
+      or simply want to say hello? We'd love to hear from you.
+    </p>
+  </div>
+
+
+  <!-- CONTACT AREA -->
+  <div class="contact-container">
+
+    <!-- LEFT SIDE -->
+    <div class="contact-info">
+
+      <span class="info-label">CONTACT US</span>
+
+      <h2>
+        We'd Love To
+        Hear From You.
+      </h2>
+
+      <p class="info-text">
+        Our team is always happy to help. Send us a message
+        and we'll get back to you as soon as possible.
+      </p>
+
+
+      <!-- EMAIL -->
+      <div class="info-item">
+
+        <div class="info-icon">✉</div>
+
+        <div>
+          <span>Email</span>
+          <a href="mailto:hello@fizzora.com">
+            hello@fizzora.com
+          </a>
+        </div>
+
+      </div>
+
+
+      <!-- PHONE -->
+      <div class="info-item">
+
+        <div class="info-icon">☎</div>
+
+        <div>
+          <span>Phone</span>
+          <a href="tel:+911234567890">
+            +91 12345 67890
+          </a>
+        </div>
+
+      </div>
+
+
+      <!-- ADDRESS -->
+      <div class="info-item">
+
+        <div class="info-icon">⌖</div>
+
+        <div>
+          <span>Visit Us</span>
+          <p>
+            24 Heritage Avenue,<br>
+            New Delhi, India
+          </p>
+        </div>
+
+      </div>
+
+
+      <!-- HOURS -->
+      <div class="opening-hours">
+
+        <span>OPENING HOURS</span>
+
+        <div>
+          <strong>Monday – Friday</strong>
+          <small>9:00 AM – 6:00 PM</small>
+        </div>
+
+        <div>
+          <strong>Saturday</strong>
+          <small>10:00 AM – 4:00 PM</small>
+        </div>
+
+        <div>
+          <strong>Sunday</strong>
+          <small>Closed</small>
+        </div>
+
+      </div>
+
+
+      <!-- SOCIAL -->
+      <div class="social-links">
+
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">YouTube</a>
+
+      </div>
+
+    </div>
+
+
+    <!-- RIGHT FORM -->
+    <div class="contact-form-box">
+
+      <div class="form-top">
+
+        <span>SEND A MESSAGE</span>
+
+        <h2>
+          Tell Us What's
+          On Your Mind.
+        </h2>
+
+      </div>
+
+
+      <form id="contactForm">
+
+        <div class="form-row">
+
+          <div class="input-group">
+
+            <label>Your Name</label>
+
+            <input
+              type="text"
+              placeholder="Enter your name"
+              required
+            >
+
+          </div>
+
+
+          <div class="input-group">
+
+            <label>Email Address</label>
+
+            <input
+              type="email"
+              placeholder="Enter your email"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="input-group">
+
+          <label>Subject</label>
+
+          <select required>
+
+            <option value="">
+              Select a subject
+            </option>
+
+            <option>
+              Product Question
+            </option>
+
+            <option>
+              Order Support
+            </option>
+
+            <option>
+              Business Inquiry
+            </option>
+
+            <option>
+              Feedback
+            </option>
+
+            <option>
+              Other
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="input-group">
+
+          <label>Your Message</label>
+
+          <textarea
+            rows="6"
+            placeholder="Write your message..."
+            required
+          ></textarea>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="send-btn"
+        >
+          Send Message →
+        </button>
+
+
+        <p
+          class="form-message"
+          id="formMessage"
+        ></p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- MAP / LOCATION -->
+  <div class="location-section">
+
+    <div class="location-text">
+
+      <span>COME SAY HELLO</span>
+
+      <h2>
+        Visit Our
+        <em>Home.</em>
+      </h2>
+
+      <p>
+        We'd love to welcome you. Stop by and discover
+        the world of FIZZORA.
+      </p>
+
+      <a href="#" class="direction-btn">
+        Get Directions →
+      </a>
+
+    </div>
+
+
+    <div class="map-box">
+
+      <div class="map-grid"></div>
+
+      <div class="map-pin">
+
+        <div>⌖</div>
+
+        <span>FIZZORA</span>
+
+      </div>
+
+      <p>
+        New Delhi, India
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="feature-strip">
+
+  <div class="feature-box">
+    <span>✦</span>
+    <div>
+      <h3>Premium Quality</h3>
+      <p>Carefully selected ingredients</p>
+    </div>
+  </div>
+
+  <div class="feature-box">
+    <span>✦</span>
+    <div>
+      <h3>Rich Flavor</h3>
+      <p>A taste worth remembering</p>
+    </div>
+  </div>
+
+  <div class="feature-box">
+    <span>✦</span>
+    <div>
+      <h3>Fresh & Smooth</h3>
+      <p>Perfect for every occasion</p>
+    </div>
+  </div>
+
+</section>
+
+
+
+<script>
+
+document.querySelectorAll(".heart")
+.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    button.textContent =
+      button.textContent === "♡"
+      ? "♥"
+      : "♡";
+
+  });
+
+});
+
+document.querySelectorAll(".cart-btn")
+.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    button.textContent = "Added ✓";
+
+    setTimeout(() => {
+      button.textContent = "Add +";
+    }, 1500);
+
+  });
+
+});
+
+document.getElementById("viewMoreBtn")
+.addEventListener("click", function() {
+
+  this.textContent = "All Drinks Loaded ✓";
+
+});
+
+
+document.querySelectorAll(".heart")
+.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    button.textContent =
+      button.textContent === "♡"
+      ? "♥"
+      : "♡";
+
+  });
+
+});
+
+
+document.querySelectorAll(".cart-btn")
+.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    button.textContent = "Added ✓";
+
+    setTimeout(() => {
+
+      button.textContent = "Add +";
+
+    }, 1500);
+
+  });
+
+});
+
+
+function toggleMenu() {
+
+  const menu =
+    document.querySelector(".nav-links");
+
+  menu.classList.toggle("show");
+
+}
+
+/* =========================================
+   CONTACT FORM
+========================================= */
+
+document
+  .getElementById("contactForm")
+  .addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const message =
+      document.getElementById("formMessage");
+
+    message.textContent =
+      "Thank you! Your message has been received.";
+
+    this.reset();
+
+  });
+
+
+
+</script>
+
+
+
+</body>
+</html>
